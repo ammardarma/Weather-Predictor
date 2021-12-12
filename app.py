@@ -1,17 +1,10 @@
-import numpy as np
+import os
 import pandas as pd
-from flask import Flask, request, jsonify, render_template
-import pickle
-from sklearn import preprocessing
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn import metrics
-from sklearn.metrics import confusion_matrix
-import statsmodels.api as sm
-from sklearn import linear_model
+from flask import Flask, jsonify, request, render_template
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import load_model
 import tensorflow_hub as tfhub
+import numpy as np
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
@@ -37,7 +30,7 @@ def predict():
     data = [[wilayah, waktu, kelembaban_persen, suhu_derajat_celsius, banyakkotarawan]]
     data_df = pd.DataFrame(data=data, columns=items)
 
-    X_df = pd.read_csv("X_data.csv", usecols=items)
+    X_df = pd.read_csv("https://raw.githubusercontent.com/ammaresok/Dataset/main/X_data.csv", usecols=items)
     predict_df = pd.concat([data_df, X_df])
 
     col_cat = [x for x in predict_df.columns if x not in ["BanyakKotaRawan"]]
