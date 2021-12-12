@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 from flask import Flask, jsonify, request, render_template
-from tensorflow.keras.preprocessing import image
-from tensorflow.keras.models import load_model
+from keras.preprocessing import image
+from keras.models import load_model
 import tensorflow_hub as tfhub
 import numpy as np
 from sklearn.preprocessing import StandardScaler
