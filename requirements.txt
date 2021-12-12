@@ -18,3 +18,12 @@ sklearn==0.0
 statsmodels==0.13.1
 threadpoolctl==3.0.0
 Werkzeug==2.0.2
+tensorboard==2.7.0
+tensorboard-data-server==0.6.1
+tensorboard-plugin-wit==1.8.0
+tensorflow==2.7.0
+tensorflow-estimator==2.7.0
+tensorflow-hub==0.12.0
+tensorflow-io-gcs-filesystem==0.22.0
+termcolor==1.1.0
+terminado==0.9.4
