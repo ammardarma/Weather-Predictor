@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cuaca Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background: rgb(252, 250, 250);">
+  <center><div class="login">
+   <h1>Prediksi Cuaca Wilayah Jakarta</h1>
+   <form action="{{ url_for('predict')}}" method="post">
+      <label for="wilayah" colo>Wilayah:  </label>
+      <select id="wilayah" name="wilayah", placeholder="wilayah", required="required">
+        <option value="Jakarta Pusat">Jakarta Pusat</option>
+        <option value="Kepulauan Seribu">Kepulauan Seribu</option>
+        <option value="Jakarta Timur">Jakarta Timur</option>
+        <option value="Jakarta Barat">Jakarta Barat</option>
+        <option value="Jakarta Selatan">Jakarta Selatan</option>
+      </select>
+      <br>
+      <br>
+      <label for="waktu" colo>Waktu  </label>
+      <select id="waktu" name="waktu", placeholder="waktu", required="required">
+        <option value="Pagi">Pagi</option>
+        <option value="Siang">Siang</option>
+        <option value="Malam">Malam</option>
+      </select>
+      <br>
+      <br>
+      <label for="kelembaban_persen">Persentase Kelembaban:  </label>
+      <input type="text" name="kelembaban_persen" placeholder="Ex : 65-95" required="required">
+      <br>
+      <br>
+      <label for="suhu_derajat_celsius">Derajat Suhu (Dalam Celsius):  </label>
+      <input type="text" name="suhu_derajat_celsius", placeholder="Ex : 22-31", required="required">
+      <br>
+      <br>
+      <label for="banyakkotarawan">Banyak Kota yang Rawan:  </label>
+      <input type="text" name="banyakkotarawan" placeholder="Ex : 5", required="required">
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Prediksi Cuaca</button>
+    </form>
+    <br>
+    <br>
+    <h2>
+      {{ prediction_text }}
+    </h2>
+  </div>
+</body>
+</html>

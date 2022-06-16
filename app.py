@@ -56,7 +56,7 @@ def predict():
     output = target[predicted_class_indices]
     
 
-    return render_template("index.html", prediction_text='Cuaca yang akan terjadi nanti yaitu {}'. format(output))
+    return render_template("index.html", prediction_text='Cuaca di daerah tersebut kemungkinan {}'. format(output))
 
 @app.route('/results',methods=['POST'])
 def results():

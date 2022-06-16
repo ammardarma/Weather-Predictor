@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="coba.css">
+</script>
+<script src="script.js"></script>
+<section class="container">
+    <h1>Prediksi Cuaca Wilayah Jakarta</h1>
+     <form action="{{ url_for('predict')}}" method="post">
+       <label for="wilayah" colo>Wilayah:  </label>
+       <div class="dropdown">
+       <select id="wilayah" name="wilayah", placeholder="wilayah", required="required", class="dropdown-select">
+         <option value="Jakarta Pusat">Jakarta Pusat</option>
+         <option value="Kepulauan Seribu">Kepulauan Seribu</option>
+         <option value="Jakarta Timur">Jakarta Timur</option>
+         <option value="Jakarta Barat">Jakarta Barat</option>
+         <option value="Jakarta Selatan">Jakarta Selatan</option>
+       </select>
+    </div>
+       <br>
+       <br>
+       <label for="waktu">Waktu</label>
+       <select id="waktu" name="waktu", placeholder="waktu", required="required">
+         <option value="Pagi">Pagi</option>
+         <option value="Siang">Siang</option>
+         <option value="Malam">Malam</option>
+       </select>
+       <br>
+       <br>
+       <label for="kelembaban_persen">Persentase Kelembaban:  </label>
+       <input type="text" name="kelembaban_persen" placeholder="Ex : 65-95" required="required">
+       <br>
+       <br>
+       <label for="suhu_derajat_celsius">Derajat Suhu (Dalam Celsius):  </label>
+       <input type="text" name="suhu_derajat_celsius", placeholder="Ex : 22-31", required="required">
+       <br>
+       <br>
+       <label for="banyakkotarawan">Banyak Kota yang Rawan:  </label>
+       <input type="text" name="banyakkotarawan" placeholder="Ex : 5", required="required">
+       <br>
+       <br>
+       <button type="submit" class="btn btn-primary btn-block btn-large">Prediksi Cuaca</button>
+     </form>
+    <div class="dropdown">
+      <select name="one" class="dropdown-select">
+        <option value="">Select…</option>
+        <option value="1">Option #1</option>
+        <option value="2">Option #2</option>
+        <option value="3">Option #3</option>
+      </select>
+    </div>
+  </section>
